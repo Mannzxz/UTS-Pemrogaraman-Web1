@@ -1,1 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistem Informasi Petani Kopi Giri Mekar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+  <header>
+    <h1>Sistem Informasi Petani Kopi Giri Mekar</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#beranda">Beranda</a></li>
+      <li><a href="#data-petani">Data Petani</a></li>
+      <li><a href="#data-panen">Data Panen</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="beranda">
+      <h2>Beranda</h2>
+      <!-- TODO: kalimat sambutan singkat -->
+    </section>
+
+    <section id="data-petani">
+      <h2>Input Data Petani</h2>
+
+      <div id="pesan" class="pesan"></div>
+
+      <form id="formPetani">
+        <label for="nama">Nama Petani</label>
+        <input type="text" id="nama" name="nama">
+
+        <label for="idPetani">NIK / ID Petani</label>
+        <input type="text" id="idPetani" name="idPetani">
+
+        <label for="alamat">Alamat</label>
+        <textarea id="alamat" name="alamat" rows="3"></textarea>
+
+        <label for="luasLahan">Luas Lahan (hektare)</label>
+        <input type="number" id="luasLahan" name="luasLahan" step="0.01" min="0">
+
+        <button type="submit">Simpan</button>
+      </form>
+
+      <h2>Daftar Petani</h2>
+      <input type="text" id="cari" placeholder="Cari petani berdasarkan nama...">
+
+      <div class="tabel-wrap">
+        <table id="tabelPetani">
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>ID Petani</th>
+              <th>Nama Petani</th>
+              <th>Alamat</th>
+              <th>Luas Lahan (ha)</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="data-panen">
+      <h2>Data Panen</h2>
+      <!-- TODO -->
+    </section>
+
+    <section id="grafik">
+      <h2>Grafik Luas Lahan dan Hasil Panen</h2>
+      <canvas id="grafikLahan"></canvas>
+      <canvas id="grafikPanen"></canvas>
+    </section>
+
+    <section id="kontak">
+      <h2>Kontak</h2>
+      <!-- TODO -->
+    </section>
+  </main>
+
+  <!-- Chart.js harus dimuat SEBELUM script.js, dan masing-masing hanya sekali -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
